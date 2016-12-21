@@ -2,7 +2,7 @@ import crypt
 def testPass(cryptPass):
     salt = cryptPass[0:2]
     dictfile = open('dictionary.txt', 'r')
-    for word in dictfile.readlines)():
+    for word in dictfile.readlines():
         word = word.strip('\n')
         cryptWord = crypt.crypt(word,salt)
         if (cryptWord == cryptPass):
