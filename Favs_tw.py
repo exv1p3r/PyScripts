@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 import twitter
 apiTwitter = twitter.Api(consumer_key="sNbr6JF5MKBGCyYFv80NoW8lE", consumer_secret="pTwfMrlGHOZCbTc8LF1sFTDA9XwJnrQha6Avol7i17feDzo2ie", access_token_key="94489055-KDgQiLZYkPwmRvWuIUFYX7Y594sq35Bl6m20bdf4n", access_token_secret="G7JnBSfeUkevqsJqSYgEtsMuJN52FUO6OQ9HMTtQgZAMV")
-tw_query = raw_input("What's the Trending Topic you want to search?")
+tw_query = raw_input("What's the Trending Topic you want to search: ")
 query = apiTwitter.GetSearch(tw_query, count=20)
 for result in query:
     print "Tweet: %s " %(result.text)
