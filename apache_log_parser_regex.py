@@ -38,7 +38,7 @@ def dictify_logline(line):
     if m:
         groupdict = m.groupdict()
         if groupdict['bytes_sent'] == '-':
-            groupdict['bytes_sent'] = '0'
+            groupdict['bytes_sent'] = ''
         return groupdict
     else:
         return{'remote_host': None,
