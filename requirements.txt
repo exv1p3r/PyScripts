@@ -1,0 +1,5 @@
+mechanize
+python-nmap
+pyPdf
+pygeoip
+BeautifulSoup4
