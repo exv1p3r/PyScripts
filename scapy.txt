@@ -1,0 +1,10 @@
+//Resolución DNS
+sr1(IP(dst="<DNS a utilizar>")/UDP()/DNS(rd=1,qd=DNSQR(qname="<DNS a resolver>")))
+
+//Realizar un traceroute
+ans,unans = sr(IP(dst='google.com', ttl=(4, 25), id=RandShort())/TCP(flags=0x2))
+for snd, rcv in ans:
+    print snd.ttl, rcv.src, isinstance(rcv.payload, TCP)
+
+//"Sniffing" sencillo
+sniff(iface="eth0", prn=lambda x: x.show())
