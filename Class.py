@@ -1,49 +1,32 @@
-#!/usr/bin python2
+#!/usr/bin/env python2
 
 class Employee:
-    raise_amount = 1.04
-    num_of_emp = 0
-
-    def __init__(self, first, last, pay):
-        self.first = first
+    def __init__(self, name, last, pay):
+        self.name = name
         self.last = last
         self.pay = pay
-        self.email = first + '.' + last + '@tydev.com'
-        
-        Employee.num_of_emp += 1
-
-                
+        self.email = name + '.' + last + '@patito.com'
 
     def fullname(self):
-        return "{} {}".format(self.first, self.last)
-
-    def apply_raise(self):
-        self.pay = int(self.pay * self.raise_amount)
+        return '{} {}'.format(self.name, self.last)
 
 emp1 = Employee('Edson', 'Cervantes', 60000)
-emp2 = Employee('Juan', 'Perez', 40000)
+emp2 = Employee('Juan', 'Perez', 80000)
 
-print Employee.apply_raise(emp1)
-
+#Se puede mandar llamar a la clase con su funcion y al final invocar a la instancia
+#O tambien se puede mandar llamar a la instancia junto con el metodo  
 print Employee.fullname(emp1)
-
-
-
-# print Employee.__dict__
-# print Employee.__doc__
-# print emp1
-# print emp2
-
-# emp1.first = "Edson"
+print emp2.fullname()
+# emp1.name = "Edson"
 # emp1.last = "Cervantes"
-# emp1.email = 'edson.cervantes@tydev.com'
+# emp1.email = "Edson.Cervantes@tygerdev.com"
 # emp1.pay = 60000
 
+# emp2.name = "Edson"
+# emp2.last = "Cervantes"
+# emp2.email = "Edson.Cervantes@tygerdev.com"
+# emp2.pay = 60000
 
-# emp2.first = "Juan"
-# emp2.last = "Perez"
-# emp2.email = 'juan.perez@tydev.com'
-# emp2.pay = 40000
-
-# print emp1.first
-# print emp2.first
+# print '{} {}'.format(emp1.name, emp1.last)
+print emp1.email
+print emp2.email
