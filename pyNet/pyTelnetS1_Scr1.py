@@ -30,6 +30,8 @@ tn.write("vlan 40\n")
 tn.write("name Recursos_Humanos\n")
 tn.write("int loopback 0\n")
 tn.write("ip addr 1.1.1.1 255.255.255.0\n")
+tn.write("int loopback 1\n")
+tn.write("ip addr 2.2.2.2 255.255.255.0\n")
 tn.write("end\n")
 tn.write("exit\n")
 
