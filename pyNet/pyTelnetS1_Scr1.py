@@ -7,6 +7,7 @@ HOST = "192.168.122.10"
 user = raw_input("Enter your telnet account: ")
 password = getpass.getpass()
 
+# Connection using the telnetlib
 tn = telnetlib.Telnet(HOST)
 
 tn.read_until("Username: ")
@@ -15,6 +16,7 @@ if password:
     tn.read_until("Password: ")
     tn.write(password + "\n")
 
+# Cisco configuration
 tn.write("enable\n")
 tn.write("cisco\n")
 tn.write("conf t\n")
