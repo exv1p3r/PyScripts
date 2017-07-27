@@ -18,19 +18,10 @@ if password:
 
 # Cisco configuration
 tn.write("conf t\n")
-tn.write("vlan 10\n")
-tn.write("name Administracion\n")
-tn.write("vlan 20\n")
-tn.write("name Ingenieria\n")
-tn.write("vlan 30\n")
-tn.write("name Marketing\n")
-tn.write("vlan 40\n")
-tn.write("name Recursos_Humanos\n")
-tn.write("int loopback 0\n")
-tn.write("ip addr 1.1.1.1 255.255.255.0\n")
-tn.write("int loopback 1\n")
-tn.write("ip addr 2.2.2.2 255.255.255.0\n")
-tn.write("end\n")
+for n in range(1, 10):
+    tn.write("vlan " + n + "\n")
+    tn.write("name vlan_" + n + "\n")
 tn.write("exit\n")
+tn.write("end\n")
 
 print tn.read_all()
