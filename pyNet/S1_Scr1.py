@@ -21,7 +21,7 @@ tn.write("conf t\n")
 for n in range(2, 10):
     tn.write("vlan " + str(n) + "\n")
     tn.write("name vlan_" + str(n) + "\n")
-tn.write("exit\n")
 tn.write("end\n")
+tn.write("exit\n")
 
 print tn.read_all()
