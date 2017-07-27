@@ -18,7 +18,7 @@ if password:
 
 # Cisco configuration
 tn.write("conf t\n")
-for n in range(1, 10):
+for n in range(2, 10):
     tn.write("vlan " + n + "\n")
     tn.write("name vlan_" + n + "\n")
 tn.write("exit\n")
