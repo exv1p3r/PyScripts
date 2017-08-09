@@ -10,5 +10,5 @@ def packet_callback(packet):
 			print "[*] %s" % packet[TCP].payload
 			
 # Fire up the sniffer
-sniff(iface='eth0', filter="tcp port 25 or tcp port 110 or tcp port 143",
+sniff(iface='en1', filter="tcp port 25 or tcp port 110 or tcp port 143",
 		prn=packet_callback, store=0)
