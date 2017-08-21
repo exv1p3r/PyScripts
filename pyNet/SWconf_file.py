@@ -19,7 +19,6 @@ for line in f:
     if password:
         tn.read_until("Password: ")
         tn.write(password + "\n")
-        
     # Cisco configuration
     tn.write("conf t\n")
     for n in range(2, 10):
