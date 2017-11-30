@@ -6,8 +6,8 @@ import paramiko
 #import socket
 def get_connection():
     passwd = open("date.txt", "r")
-    ssh = paramiko.SSHClient() #Se declara el cliente SSH
-    ssh.load_system_host_keys() #Se agrega al listado de los host conocidos
+    ssh = paramiko.SSHClient()                           #Se declara el cliente SSH
+    ssh.load_system_host_keys()                          #Se agrega al listado de los host conocidos
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh.connect('192.168.30.108', username='root', password=passwd.read(), port=2022)
     return 0

